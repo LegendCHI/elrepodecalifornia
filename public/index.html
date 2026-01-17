@@ -185,6 +185,21 @@
     window.history.replaceState({}, document.title, "/");
   }
 </script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const isLogged = params.get("logged") === "true";
+
+  const splash = document.getElementById("splash");
+  const app = document.getElementById("app");
+
+  if (isLogged) {
+    if (splash) splash.style.display = "none";
+    if (app) app.style.display = "block";
+
+    // limpiar la URL
+    window.history.replaceState({}, document.title, "/");
+  }
+</script>
 
 </body>
 </html>
