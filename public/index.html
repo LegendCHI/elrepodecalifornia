@@ -7,184 +7,155 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <!-- ========== SPLASH LOGIN DISCORD ========== -->
 <div id="splash" class="splash">
   <div class="splash-box">
     <img src="logo.png" alt="CRPC" class="splash-logo">
     <h1>California RolePlay Community</h1>
     <p>Debes vincular tu cuenta de Discord para continuar</p>
-    <button class="discord-login"
-      onclick="window.location.href='/auth/discord'">
+    <button class="discord-login" onclick="window.location.href='/auth/discord'">
       🔗 Vincular cuenta de Discord
     </button>
   </div>
 </div>
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar">
-  <div class="logo">
-    <img src="logo.png" alt="CRPC">
-    <span>California RP</span>
-  </div>
 
-  <nav class="menu">
-    <a href="#quienes">👥 Quiénes Somos</a>
-    <a href="#facciones">🏛️ Facciones</a>
-    <a href="#terminos">📜 Términos</a>
-    <a href="#tienda">🛒 Tienda</a>
-  </nav>
+<!-- ========== APP (OCULTA HASTA LOGIN) ========== -->
+<div id="app" style="display:none;">
 
-  <div class="sidebar-footer">
-    <a class="discord-btn main" href="https://discord.gg/FmGW2sKxqD" target="_blank">
-      💬 Discord Principal
-    </a>
-    <a class="discord-btn secondary" href="https://discord.gg/Uz6NBMthck" target="_blank">
-      🧩 Discord Axory
-    </a>
-  </div>
-</aside>
-
-<!-- ================= CONTENIDO ================= -->
-<main class="content">
-
-<!-- QUIENES SOMOS -->
-<section id="quienes" class="page">
-  <h1>👥 Quiénes Somos</h1>
-  <p class="lead">
-    California RolePlay Community es un servidor de <strong>RolePlay serio</strong>,
-    enfocado en la inmersión, el respeto narrativo y la experiencia realista.
-  </p>
-
-  <div class="info-cards">
-    <div class="info-card card-hover">🎭 RP Estricto</div>
-    <div class="info-card card-hover">🛡️ Staff Activo</div>
-    <div class="info-card card-hover">🌎 Comunidad Internacional</div>
-    <div class="info-card card-hover">⚖️ Normativa Clara</div>
-  </div>
-</section>
-
-<!-- FACCIONES -->
-<section id="facciones" class="page">
-  <h1>🏛️ Facciones Oficiales</h1>
-
-  <div class="factions-grid">
-
-    <div class="faction-card open">
-      <span class="status open">🟢 ABIERTA</span>
-      <img src="policia.png" alt="Policía">
-      <h2>🚓 Policía de California</h2>
-      <p>Orden público, investigaciones y protección ciudadana.</p>
-      <a href="https://discord.gg/Ews75JAg" target="_blank">Unirse al Discord</a>
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="logo.png" alt="CRPC">
+      <span>California RP</span>
     </div>
 
-    <div class="faction-card open">
-      <span class="status open">🟢 ABIERTA</span>
-      <img src="bomberos.png" alt="Bomberos">
-      <h2>🚒 Bomberos</h2>
-      <p>Emergencias, incendios y rescates de alto riesgo.</p>
-      <a href="https://discord.gg/e9Y3TUUH" target="_blank">Unirse al Discord</a>
+    <nav class="menu">
+      <a href="#quienes">👥 Quiénes Somos</a>
+      <a href="#facciones">🏛️ Facciones</a>
+      <a href="#terminos">📜 Términos</a>
+      <a href="#tienda">🛒 Tienda</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="discord-btn main" href="https://discord.gg/FmGW2sKxqD" target="_blank">
+        💬 Discord Principal
+      </a>
+      <a class="discord-btn secondary" href="https://discord.gg/Uz6NBMthck" target="_blank">
+        🧩 Discord Axory
+      </a>
     </div>
+  </aside>
 
-    <div class="faction-card closed">
-      <span class="status closed">🔴 CERRADA</span>
-      <img src="dot.png" alt="DOT">
-      <h2>🛣️ Department of Transportation</h2>
-      <p>Carreteras, infraestructura y apoyo vial.</p>
-    </div>
+  <!-- ================= CONTENIDO ================= -->
+  <main class="content">
 
-  </div>
-</section>
+    <!-- QUIENES SOMOS -->
+    <section id="quienes" class="page">
+      <h1>👥 Quiénes Somos</h1>
+      <p class="lead">
+        California RolePlay Community es un servidor de <strong>RolePlay serio</strong>,
+        enfocado en la inmersión, el respeto narrativo y la experiencia realista.
+      </p>
 
-<!-- TERMINOS -->
-<section id="terminos" class="page">
-  <h1>📜 Términos & Condiciones</h1>
+      <div class="info-cards">
+        <div class="info-card card-hover">🎭 RP Estricto</div>
+        <div class="info-card card-hover">🛡️ Staff Activo</div>
+        <div class="info-card card-hover">🌎 Comunidad Internacional</div>
+        <div class="info-card card-hover">⚖️ Normativa Clara</div>
+      </div>
+    </section>
 
-  <article>
-    <h3>Artículo 1 — Aceptación</h3>
-    <p>El ingreso al servidor implica aceptar todas las normas vigentes.</p>
-  </article>
+    <!-- FACCIONES -->
+    <section id="facciones" class="page">
+      <h1>🏛️ Facciones Oficiales</h1>
 
-  <article>
-    <h3>Artículo 2 — RolePlay Serio</h3>
-    <p>Se exige interpretación coherente y realista del personaje.</p>
-  </article>
+      <div class="factions-grid">
 
-  <article>
-    <h3>Artículo 3 — Metagaming & Powergaming</h3>
-    <p>Ambas prácticas están estrictamente prohibidas.</p>
-  </article>
+        <div class="faction-card open">
+          <span class="status open">🟢 ABIERTA</span>
+          <img src="policia.png" alt="Policía">
+          <h2>🚓 Policía de California</h2>
+          <p>Orden público, investigaciones y protección ciudadana.</p>
+          <a href="https://discord.gg/Ews75JAg" target="_blank">Unirse al Discord</a>
+        </div>
 
-  <article>
-    <h3>Artículo 4 — Autoridad del Staff</h3>
-    <p>Las decisiones administrativas son finales.</p>
-  </article>
-</section>
+        <div class="faction-card open">
+          <span class="status open">🟢 ABIERTA</span>
+          <img src="bomberos.png" alt="Bomberos">
+          <h2>🚒 Bomberos</h2>
+          <p>Emergencias, incendios y rescates de alto riesgo.</p>
+          <a href="https://discord.gg/e9Y3TUUH" target="_blank">Unirse al Discord</a>
+        </div>
 
-  <div class="about-box card-hover">
-  <h3>⚖️ Justicia imparcial</h3>
-  <p>No hay favoritismos ni abusos de poder.</p>
+        <div class="faction-card closed">
+          <span class="status closed">🔴 CERRADA</span>
+          <img src="dot.png" alt="DOT">
+          <h2>🛣️ Department of Transportation</h2>
+          <p>Carreteras, infraestructura y apoyo vial.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TERMINOS -->
+    <section id="terminos" class="page">
+      <h1>📜 Términos & Condiciones</h1>
+
+      <article>
+        <h3>Artículo 1 — Aceptación</h3>
+        <p>El ingreso al servidor implica aceptar todas las normas vigentes.</p>
+      </article>
+
+      <article>
+        <h3>Artículo 2 — RolePlay Serio</h3>
+        <p>Se exige interpretación coherente y realista del personaje.</p>
+      </article>
+
+      <article>
+        <h3>Artículo 3 — Metagaming & Powergaming</h3>
+        <p>Ambas prácticas están estrictamente prohibidas.</p>
+      </article>
+
+      <article>
+        <h3>Artículo 4 — Autoridad del Staff</h3>
+        <p>Las decisiones administrativas son finales.</p>
+      </article>
+    </section>
+
+    <!-- TIENDA -->
+    <section id="tienda" class="page">
+      <h1>🛒 Tienda Oficial</h1>
+      <p class="lead">Apoya al servidor y obtén beneficios administrativos.</p>
+
+      <div class="shop-grid">
+        <div class="shop-item card-hover">
+          <h3>🚫 Quitar 1 Advertencia</h3>
+          <p>Elimina una advertencia activa de tu cuenta.</p>
+          <span class="price">💰 50 Robux</span>
+          <button>Comprar</button>
+        </div>
+
+        <div class="shop-item card-hover">
+          <h3>🚫 Quitar 1 Advertencia</h3>
+          <p>Elimina una advertencia activa de tu cuenta.</p>
+          <span class="price">💰 50 Robux</span>
+          <button>Comprar</button>
+        </div>
+
+        <div class="shop-item card-hover">
+          <h3>🚫 Quitar 1 Advertencia</h3>
+          <p>Elimina una advertencia activa de tu cuenta.</p>
+          <span class="price">💰 50 Robux</span>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
 </div>
 
-<div class="about-box card-hover">
-  <h3>🛡️ Protección al rol</h3>
-  <p>Tu experiencia es prioridad absoluta.</p>
-</div>
-
-<div class="about-box card-hover">
-  <h3>🚨 Staff activo</h3>
-  <p>Moderadores conectados diariamente.</p>
-</div>
-
-<!-- TIENDA -->
-<section id="tienda" class="page">
-  <h1>🛒 Tienda Oficial</h1>
-  <p class="lead">Apoya al servidor y obtén beneficios administrativos.</p>
-
-  <div class="shop-grid card-hover">
-<div class="shop-item card-hover">
-  <h3>🚫 Quitar 1 Advertencia</h3>
-  <p>Elimina una advertencia activa de tu cuenta.</p>
-  <span class="price">💰 50 Robux</span>
-  <button>Comprar</button>
-</div>
-
-
-<div class="shop-item card-hover">
-  <h3>🚫 Quitar 1 Advertencia</h3>
-  <p>Elimina una advertencia activa de tu cuenta.</p>
-  <span class="price">💰 50 Robux</span>
-  <button>Comprar</button>
-</div>
-
-
-<div class="shop-item card-hover">
-  <h3>🚫 Quitar 1 Advertencia</h3>
-  <p>Elimina una advertencia activa de tu cuenta.</p>
-  <span class="price">💰 50 Robux</span>
-  <button>Comprar</button>
-</div>
-
-  </div>
-</section>
-
-</main>
-<script src="main.js"></script>
-  <script>
-  const params = new URLSearchParams(window.location.search);
-  const isLogged = params.get("logged") === "true";
-
-  if (isLogged) {
-    // Ocultar pantalla negra
-    const loginScreen = document.getElementById("login-screen");
-    if (loginScreen) loginScreen.style.display = "none";
-
-    // Mostrar contenido principal
-    const app = document.getElementById("app");
-    if (app) app.style.display = "block";
-
-    // Limpiar la URL
-    window.history.replaceState({}, document.title, "/");
-  }
-</script>
+<!-- ========== AUTH SCRIPT ========== -->
 <script>
   const params = new URLSearchParams(window.location.search);
   const isLogged = params.get("logged") === "true";
@@ -193,10 +164,8 @@
   const app = document.getElementById("app");
 
   if (isLogged) {
-    if (splash) splash.style.display = "none";
-    if (app) app.style.display = "block";
-
-    // limpiar la URL
+    splash.style.display = "none";
+    app.style.display = "block";
     window.history.replaceState({}, document.title, "/");
   }
 </script>
