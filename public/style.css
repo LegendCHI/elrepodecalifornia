@@ -1,140 +1,164 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  margin: 0;
-  background: #0e1117;
-  color: #e5e7eb;
-}
-
-/* LOGIN */
-#login-screen {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #0e1117, #020617);
+  font-family: "Segoe UI", sans-serif;
+  background: #0b0e14;
+  color: #eaeaea;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-box {
-  background: rgba(255,255,255,0.05);
-  padding: 40px;
-  border-radius: 12px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-
-.login-box button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #5865F2;
-  border: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* APP */
-.hidden {
-  display: none;
-}
-
-#app {
-  display: flex;
-  height: 100vh;
 }
 
 /* SIDEBAR */
 .sidebar {
-  width: 240px;
-  background: #020617;
+  width: 260px;
+  background: #0f1420;
+  height: 100vh;
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  position: fixed;
 }
 
-.sidebar h2 {
-  margin-bottom: 20px;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
-.sidebar nav button {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  background: none;
-  border: 1px solid #1f2937;
-  color: #e5e7eb;
-  cursor: pointer;
+.logo img {
+  width: 40px;
 }
 
-.sidebar nav button:hover {
-  border-color: #38bdf8;
+.logo span {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-.sidebar-bottom {
+.menu a {
+  display: block;
+  padding: 12px 15px;
+  color: #ddd;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.menu a:hover {
+  background: #1b2335;
+  color: #4fc3ff;
+}
+
+.sidebar-footer {
   margin-top: auto;
 }
 
-.sidebar-bottom a {
+.discord-btn {
   display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
   margin-top: 10px;
-  color: #38bdf8;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.discord-btn.main {
+  background: #5865f2;
+  color: white;
+}
+
+.discord-btn.secondary {
+  background: #1f2937;
+  color: #ddd;
 }
 
 /* CONTENT */
 .content {
-  flex: 1;
-  padding: 30px;
-  overflow-y: auto;
+  margin-left: 260px;
+  padding: 40px;
+  width: 100%;
 }
 
-.section {
-  display: none;
+.page {
+  margin-bottom: 80px;
 }
 
-.section.active {
-  display: block;
+.page h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.lead {
+  max-width: 800px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* INFO CARDS */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.info-card {
+  background: #12182a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 /* FACCIONES */
-.faction-grid {
+.factions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
 .faction-card {
-  background: rgba(255,255,255,0.04);
-  border: 2px solid transparent;
-  padding: 15px;
-  border-radius: 12px;
-  transition: 0.3s;
+  background: #12182a;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s;
 }
 
 .faction-card:hover {
-  border-color: #38bdf8;
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 2px #4fc3ff;
 }
 
 .faction-card img {
-  width: 100%;
-  border-radius: 8px;
+  width: 90px;
+  margin-bottom: 15px;
 }
 
-.faction-card .status {
+.status {
   display: inline-block;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: .9rem;
+}
+
+/* SHOP */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.shop-card {
+  background: #12182a;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.price {
+  display: block;
+  margin-top: 15px;
   font-weight: bold;
-}
-
-.faction-card.open .status {
-  color: #22c55e;
-}
-
-.faction-card.closed .status {
-  color: #ef4444;
+  color: #4fc3ff;
 }
