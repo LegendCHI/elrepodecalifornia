@@ -1,24 +1,78 @@
+/* ================= VARIABLES ================= */
+:root {
+  --bg: #020617;
+  --panel: #0b1224;
+  --card: #0f172a;
+  --accent: #3b82f6;
+  --accent-soft: rgba(59,130,246,.15);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --radius: 18px;
+}
+
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ================= BODY ================= */
 body {
-  font-family: "Segoe UI", sans-serif;
-  background: #0b0e14;
-  color: #eaeaea;
+  font-family: Inter, system-ui, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: var(--text);
   display: flex;
 }
 
-/* SIDEBAR */
+/* ================= SPLASH ================= */
+.splash {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,.94);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.splash-box {
+  text-align: center;
+  max-width: 420px;
+}
+
+.splash-logo {
+  width: 120px;
+  margin-bottom: 24px;
+}
+
+.discord-login {
+  margin-top: 24px;
+  padding: 14px 28px;
+  font-size: 16px;
+  background: #5865f2;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.discord-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(88,101,242,.45);
+}
+
+/* ================= SIDEBAR ================= */
 .sidebar {
   width: 260px;
   background: linear-gradient(180deg, #020617, #020617dd);
-  padding: 24px;
+  padding: 28px 24px;
   position: fixed;
   height: 100vh;
   border-right: 1px solid rgba(255,255,255,.05);
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -34,8 +88,9 @@ body {
   height: 38px;
 }
 
+/* ================= MENU ================= */
 .menu {
-  margin-top: 40px;
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -44,9 +99,9 @@ body {
 .menu a {
   text-decoration: none;
   color: var(--muted);
-  padding: 10px 14px;
-  border-radius: 10px;
-  transition: all .2s;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: background .2s, color .2s;
 }
 
 .menu a:hover {
@@ -54,7 +109,7 @@ body {
   color: white;
 }
 
-
+/* ================= SIDEBAR FOOTER ================= */
 .sidebar-footer {
   margin-top: auto;
 }
@@ -63,10 +118,10 @@ body {
   display: block;
   text-align: center;
   padding: 12px;
-  border-radius: 8px;
-  margin-top: 10px;
+  border-radius: 12px;
+  margin-top: 12px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .discord-btn.main {
@@ -75,188 +130,175 @@ body {
 }
 
 .discord-btn.secondary {
-  background: #1f2937;
-  color: #ddd;
+  background: #111827;
+  color: #d1d5db;
 }
 
-/* CONTENT */
+/* ================= CONTENT ================= */
 .content {
   margin-left: 260px;
-  padding: 40px;
+  padding: 70px 80px;
   width: 100%;
 }
 
 .page {
-  margin-bottom: 80px;
+  max-width: 1200px;
+  margin-bottom: 120px;
 }
 
 .page h1 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+  font-size: 42px;
+  margin-bottom: 16px;
 }
 
 .lead {
-  max-width: 800px;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 18px;
   line-height: 1.7;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-/* INFO CARDS */
+/* ================= INFO CARDS ================= */
 .info-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-}
-
-.info-card {
-  background: #12182a;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-/* FACCIONES */
-.factions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
-
-.faction-card {
-  background: #12182a;
-  padding: 20px;
-  border-radius: 14px;
-  text-align: center;
-  transition: transform .2s, box-shadow .2s;
-}
-
-.faction-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 0 2px #4fc3ff;
-}
-
-.faction-card img {
-  width: 90px;
-  margin-bottom: 15px;
-}
-.splash {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.splash-box {
-  text-align: center;
-  color: white;
-}
-
-.splash-logo {
-  width: 120px;
-  margin-bottom: 20px;
-}
-
-.discord-login {
-  margin-top: 20px;
-  padding: 14px 26px;
-  font-size: 16px;
-  background: #5865F2;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.discord-login:hover {
-  transform: scale(1.05);
-}
-
-.status {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-size: .9rem;
-}
-
-/* SHOP */
-.shop-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
-.shop-card {
-  background: #12182a;
-  padding: 25px;
-  border-radius: 14px;
+.info-card {
+  background: var(--card);
+  padding: 26px;
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* ================= FACCIONES ================= */
+.factions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.faction-card {
+  background: linear-gradient(180deg, #0b1224, #020617);
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255,255,255,.06);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.faction-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,.6);
+}
+
+.faction-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: brightness(.9);
+}
+
+.faction-card h2 {
+  font-size: 22px;
+  margin: 20px 22px 8px;
+}
+
+.faction-card p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 22px 18px;
+}
+
+.faction-card a {
+  margin: 0 22px 24px;
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .2s, transform .2s;
+}
+
+.faction-card a:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* ================= STATUS ================= */
+.status {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.status.open {
+  background: rgba(34,197,94,.15);
+  color: #22c55e;
+}
+
+.status.closed {
+  background: rgba(239,68,68,.15);
+  color: #ef4444;
+}
+
+/* ================= SHOP ================= */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.shop-item {
+  background: var(--card);
+  padding: 28px;
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.06);
 }
 
 .price {
   display: block;
-  margin-top: 15px;
-  font-weight: bold;
-  color: #4fc3ff;
-}
-/* EFECTO CARD UNIVERSAL */
-.card-hover {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.card-hover:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(0, 170, 255, 0.45);
-}
-
-/* PARA QUE SE VEA SUAVE */
-.card-hover img {
-  transition: transform 0.35s ease;
-}
-
-.shop-item {
-  background: rgba(255,255,255,0.06);
-  padding: 20px;
-  border-radius: 14px;
-  text-align: center;
+  margin-top: 16px;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .shop-item button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #00aaff;
+  margin-top: 18px;
+  padding: 12px 22px;
+  background: var(--accent);
   border: none;
-  border-radius: 10px;
-  color: #fff;
+  border-radius: 12px;
+  color: white;
   cursor: pointer;
-  transition: transform 0.25s ease, background 0.25s;
+  font-weight: 600;
+  transition: background .2s, transform .2s;
 }
-
-:root {
-  --bg: #0b0e14;
-  --panel: #111827;
-  --card: #151c2f;
-  --accent: #3b82f6;
-  --accent-soft: rgba(59,130,246,.15);
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --radius: 16px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Inter, system-ui, sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: var(--text);
-  display: flex;
-}
-
 
 .shop-item button:hover {
-  background: #0088cc;
-  transform: scale(1.05);
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* ================= CARD HOVER UNIVERSAL ================= */
+.card-hover {
+  transition: transform .25s, box-shadow .25s;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,.5);
 }
