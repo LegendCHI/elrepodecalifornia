@@ -1,76 +1,123 @@
-require("dotenv").config();
-const express = require("express");
-const session = require("express-session");
-const passport = require("passport");
-const DiscordStrategy = require("passport-discord").Strategy;
-const path = require("path");
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>California RolePlay Community</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-const app = express();
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+  <div class="logo">
+    <img src="assets/logo.png" alt="CRPC">
+    <span>California RP</span>
+  </div>
 
-/* ================= SESIÓN ================= */
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+  <nav class="menu">
+    <a href="#quienes">👥 Quiénes Somos</a>
+    <a href="#facciones">🏛️ Facciones</a>
+    <a href="#terminos">📜 Términos</a>
+    <a href="#tienda">🛒 Tienda</a>
+  </nav>
 
-/* ================= PASSPORT ================= */
-passport.serializeUser((user, done) => done(null, user));
-passport.deserializeUser((obj, done) => done(null, obj));
+  <div class="sidebar-footer">
+    <a class="discord-btn main" href="https://discord.gg/FmGW2sKxqD" target="_blank">
+      💬 Discord Principal
+    </a>
+    <a class="discord-btn secondary" href="https://discord.gg/Uz6NBMthck" target="_blank">
+      🧩 Discord Axory
+    </a>
+  </div>
+</aside>
 
-passport.use(
-  new DiscordStrategy(
-    {
-      clientID: process.env.DISCORD_CLIENT_ID,
-      clientSecret: process.env.DISCORD_CLIENT_SECRET,
-      callbackURL: process.env.DISCORD_CALLBACK_URL,
-      scope: ["identify", "guilds"],
-    },
-    (accessToken, refreshToken, profile, done) => {
-      return done(null, profile);
-    }
-  )
-);
+<!-- ================= CONTENIDO ================= -->
+<main class="content">
 
-app.use(passport.initialize());
-app.use(passport.session());
+<!-- QUIENES SOMOS -->
+<section id="quienes" class="page">
+  <h1>👥 Quiénes Somos</h1>
+  <p class="lead">
+    California RolePlay Community es un servidor de <strong>RolePlay serio</strong>,
+    enfocado en la inmersión, el respeto narrativo y la experiencia realista.
+  </p>
 
-/* ================= CSP ================= */
-app.use((req, res, next) => {
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;"
-  );
-  next();
-});
+  <div class="info-cards">
+    <div class="info-card">🎭 RP Estricto</div>
+    <div class="info-card">🛡️ Staff Activo</div>
+    <div class="info-card">🌎 Comunidad Latina</div>
+    <div class="info-card">⚖️ Normativa Clara</div>
+  </div>
+</section>
 
-/* ================= FRONTEND ================= */
-app.use(express.static(path.join(__dirname, "../public")));
+<!-- FACCIONES -->
+<section id="facciones" class="page">
+  <h1>🏛️ Facciones Oficiales</h1>
 
-/* ================= AUTH ROUTES ================= */
-app.get("/auth/discord", passport.authenticate("discord"));
+  <div class="factions-grid">
 
-app.get(
-  "/auth/discord/callback",
-  passport.authenticate("discord", {
-    failureRedirect: "/",
-  }),
-  (req, res) => {
-    // Aquí ya está logueado
-    res.redirect("/?logged=true");
-  }
-);
+    <div class="faction-card open">
+      <span class="status open">🟢 ABIERTA</span>
+      <img src="assets/policia.png" alt="Policía">
+      <h2>🚓 Policía de California</h2>
+      <p>Orden público, investigaciones y protección ciudadana.</p>
+      <a href="https://discord.gg/Ews75JAg" target="_blank">Unirse al Discord</a>
+    </div>
 
-/* ================= API USER ================= */
-app.get("/api/me", (req, res) => {
-  if (!req.user) return res.status(401).json({ error: "No auth" });
-  res.json(req.user);
-});
+    <div class="faction-card open">
+      <span class="status open">🟢 ABIERTA</span>
+      <img src="assets/bomberos.png" alt="Bomberos">
+      <h2>🚒 Bomberos</h2>
+      <p>Emergencias, incendios y rescates de alto riesgo.</p>
+      <a href="https://discord.gg/e9Y3TUUH" target="_blank">Unirse al Discord</a>
+    </div>
 
-/* ================= START ================= */
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Servidor corriendo en puerto", PORT);
-});
+    <div class="faction-card closed">
+      <span class="status closed">🔴 CERRADA</span>
+      <img src="assets/dot.png" alt="DOT">
+      <h2>🛣️ Department of Transportation</h2>
+      <p>Carreteras, infraestructura y apoyo vial.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TERMINOS -->
+<section id="terminos" class="page">
+  <h1>📜 Términos & Condiciones</h1>
+
+  <article>
+    <h3>Artículo 1 — Aceptación</h3>
+    <p>El ingreso al servidor implica aceptar todas las normas vigentes.</p>
+  </article>
+
+  <article>
+    <h3>Artículo 2 — RolePlay Serio</h3>
+    <p>Se exige interpretación coherente y realista del personaje.</p>
+  </article>
+
+  <article>
+    <h3>Artículo 3 — Metagaming & Powergaming</h3>
+    <p>Ambas prácticas están estrictamente prohibidas.</p>
+  </article>
+
+  <article>
+    <h3>Artículo 4 — Autoridad del Staff</h3>
+    <p>Las decisiones administrativas son finales.</p>
+  </article>
+</section>
+
+<!-- TIENDA -->
+<section id="tienda" class="page">
+  <h1>🛒 Tienda Oficial</h1>
+  <p class="lead">Apoya al servidor y obtén beneficios administrativos.</p>
+
+  <div class="shop-grid">
+    <div class="shop-card">
+      <h2>❌ Quitar 1 Advertencia</h2>
+      <p>Elimina una advertencia activa.</p>
+      <span class="price">💎 50 Robux</span>
+    </div>
+
+    <div class="shop-card">
