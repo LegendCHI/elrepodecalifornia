@@ -9,6 +9,21 @@ if (window.location.search.includes("logged=true")) {
   document.getElementById("app").classList.remove("hidden");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/api/session", { credentials: "include" })
+    .then(res => res.json())
+    .then(data => {
+      const splash = document.getElementById("splash");
+      if (data.logged) {
+        splash.style.display = "none";
+      } else {
+        splash.style.display = "flex";
+      }
+    })
+    .catch(() => {
+      document.getElementById("splash").style.display = "flex";
+    });
+});
 // NAVEGACIÓN
 document.querySelectorAll(".sidebar nav button").forEach(btn => {
   btn.addEventListener("click", () => {
