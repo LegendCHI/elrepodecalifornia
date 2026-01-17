@@ -229,6 +229,30 @@ body {
   transition: transform 0.25s ease, background 0.25s;
 }
 
+:root {
+  --bg: #0b0e14;
+  --panel: #111827;
+  --card: #151c2f;
+  --accent: #3b82f6;
+  --accent-soft: rgba(59,130,246,.15);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: var(--text);
+  display: flex;
+}
+
+
 .shop-item button:hover {
   background: #0088cc;
   transform: scale(1.05);
