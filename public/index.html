@@ -1,103 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>California RolePlay Community</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- PANTALLA DE INICIO / LOGIN -->
-  <div id="login-screen">
-    <div class="login-box">
-      <h1>California RolePlay Community</h1>
-      <p>Servidor de RolePlay Serio</p>
-      <button id="discord-login">Vincular cuenta de Discord</button>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+  <div class="logo">
+    <img src="assets/logo.png" alt="CRPC">
+    <span>California RP</span>
+  </div>
+
+  <nav class="menu">
+    <a href="#quienes">👥 Quiénes Somos</a>
+    <a href="#facciones">🏛️ Facciones</a>
+    <a href="#terminos">📜 Términos</a>
+    <a href="#tienda">🛒 Tienda</a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a class="discord-btn main" href="https://discord.gg/FmGW2sKxqD" target="_blank">
+      💬 Discord Principal
+    </a>
+    <a class="discord-btn secondary" href="https://discord.gg/Uz6NBMthck" target="_blank">
+      🧩 Discord Axory
+    </a>
+  </div>
+</aside>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="content">
+
+<!-- QUIENES SOMOS -->
+<section id="quienes" class="page">
+  <h1>👥 Quiénes Somos</h1>
+  <p class="lead">
+    California RolePlay Community es un servidor de <strong>RolePlay serio</strong>,
+    enfocado en la inmersión, el respeto narrativo y la experiencia realista.
+  </p>
+
+  <div class="info-cards">
+    <div class="info-card">🎭 RP Estricto</div>
+    <div class="info-card">🛡️ Staff Activo</div>
+    <div class="info-card">🌎 Comunidad Latina</div>
+    <div class="info-card">⚖️ Normativa Clara</div>
+  </div>
+</section>
+
+<!-- FACCIONES -->
+<section id="facciones" class="page">
+  <h1>🏛️ Facciones Oficiales</h1>
+
+  <div class="factions-grid">
+
+    <div class="faction-card open">
+      <span class="status open">🟢 ABIERTA</span>
+      <img src="assets/policia.png" alt="Policía">
+      <h2>🚓 Policía de California</h2>
+      <p>Orden público, investigaciones y protección ciudadana.</p>
+      <a href="https://discord.gg/Ews75JAg" target="_blank">Unirse al Discord</a>
+    </div>
+
+    <div class="faction-card open">
+      <span class="status open">🟢 ABIERTA</span>
+      <img src="assets/bomberos.png" alt="Bomberos">
+      <h2>🚒 Bomberos</h2>
+      <p>Emergencias, incendios y rescates de alto riesgo.</p>
+      <a href="https://discord.gg/e9Y3TUUH" target="_blank">Unirse al Discord</a>
+    </div>
+
+    <div class="faction-card closed">
+      <span class="status closed">🔴 CERRADA</span>
+      <img src="assets/dot.png" alt="DOT">
+      <h2>🛣️ Department of Transportation</h2>
+      <p>Carreteras, infraestructura y apoyo vial.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TERMINOS -->
+<section id="terminos" class="page">
+  <h1>📜 Términos & Condiciones</h1>
+
+  <article>
+    <h3>Artículo 1 — Aceptación</h3>
+    <p>El ingreso al servidor implica aceptar todas las normas vigentes.</p>
+  </article>
+
+  <article>
+    <h3>Artículo 2 — RolePlay Serio</h3>
+    <p>Se exige interpretación coherente y realista del personaje.</p>
+  </article>
+
+  <article>
+    <h3>Artículo 3 — Metagaming & Powergaming</h3>
+    <p>Ambas prácticas están estrictamente prohibidas.</p>
+  </article>
+
+  <article>
+    <h3>Artículo 4 — Autoridad del Staff</h3>
+    <p>Las decisiones administrativas son finales.</p>
+  </article>
+</section>
+
+<!-- TIENDA -->
+<section id="tienda" class="page">
+  <h1>🛒 Tienda Oficial</h1>
+  <p class="lead">Apoya al servidor y obtén beneficios administrativos.</p>
+
+  <div class="shop-grid">
+    <div class="shop-card">
+      <h2>❌ Quitar 1 Advertencia</h2>
+      <p>Elimina una advertencia activa.</p>
+      <span class="price">💎 50 Robux</span>
+    </div>
+
+    <div class="shop-card">
+      <h2>⭐ Prioridad Whitelist</h2>
+      <p>Acceso preferencial a evaluaciones.</p>
+      <span class="price">💎 100 Robux</span>
+    </div>
+
+    <div class="shop-card">
+      <h2>🎨 Cambio de Nombre IC</h2>
+      <p>Modifica el nombre de tu personaje.</p>
+      <span class="price">💎 30 Robux</span>
     </div>
   </div>
+</section>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <div id="app" class="hidden">
+</main>
 
-    <aside class="sidebar">
-      <h2>CRC</h2>
-
-      <nav>
-        <button data-section="terminos">Términos</button>
-        <button data-section="facciones">Facciones</button>
-        <button data-section="about">¿Quiénes somos?</button>
-      </nav>
-
-      <div class="sidebar-bottom">
-        <a href="https://discord.gg/TU_DISCORD_1" target="_blank">Discord Principal</a>
-        <a href="https://discord.gg/TU_DISCORD_2" target="_blank">Discord Staff</a>
-      </div>
-    </aside>
-
-    <main class="content">
-      <section id="terminos" class="section active">
-        <h1>Términos y Condiciones</h1>
-        <p>
-          Al ingresar a California RolePlay Community, el usuario acepta cumplir
-          todas las normas del servidor, respetar el rol serio y acatar las
-          decisiones administrativas.
-        </p>
-
-        <h3>Artículo 1</h3>
-        <p>Está prohibido el metagaming, powergaming y cualquier conducta antirrol.</p>
-
-        <h3>Artículo 2</h3>
-        <p>El incumplimiento de normas puede resultar en sanciones.</p>
-
-        <h3>Artículo 3</h3>
-        <p>La administración se reserva el derecho de admisión.</p>
-
-        <!-- puedes seguir agregando artículos sin límite -->
-      </section>
-
-      <section id="facciones" class="section">
-        <h1>Facciones</h1>
-
-        <div class="faction-grid">
-
-          <div class="faction-card open">
-            <img src="policia.png" alt="Policía">
-            <h2>Policía de California</h2>
-            <p>Encargados del orden y la ley en el estado.</p>
-            <span class="status">Abierta</span>
-            <a href="https://discord.gg/policia" target="_blank">Discord</a>
-          </div>
-
-          <div class="faction-card closed">
-            <img src="bomberos.png" alt="EMS">
-            <h2>Servicios Médicos</h2>
-            <p>Atención de emergencias y rescates.</p>
-            <span class="status">Cerrada</span>
-          </div>
-
-          <div class="faction-card open">
-            <img src="dot.png" alt="DOT">
-            <h2>Department of Transportation</h2>
-            <p>Gestión vial y control de carreteras.</p>
-            <span class="status">Abierta</span>
-            <a href="https://discord.gg/dot" target="_blank">Discord</a>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <h1>¿Quiénes somos?</h1>
-        <p>
-          California RolePlay Community es un servidor enfocado en rol serio,
-          realista y organizado, con sistemas avanzados y administración activa.
-        </p>
-      </section>
-    </main>
-
-  </div>
-
-  <script src="main.js"></script>
 </body>
 </html>
