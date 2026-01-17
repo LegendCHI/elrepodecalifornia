@@ -168,5 +168,23 @@
 
 </main>
 <script src="main.js"></script>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const isLogged = params.get("logged") === "true";
+
+  if (isLogged) {
+    // Ocultar pantalla negra
+    const loginScreen = document.getElementById("login-screen");
+    if (loginScreen) loginScreen.style.display = "none";
+
+    // Mostrar contenido principal
+    const app = document.getElementById("app");
+    if (app) app.style.display = "block";
+
+    // Limpiar la URL
+    window.history.replaceState({}, document.title, "/");
+  }
+</script>
+
 </body>
 </html>
